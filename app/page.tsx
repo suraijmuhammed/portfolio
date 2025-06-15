@@ -58,22 +58,22 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "Communets E-Commerce Website",
       description:
-        "Full-stack e-commerce solution with React, Node.js, and MongoDB. Features include user authentication, payment integration, and admin dashboard.",
-      tech: ["React", "Node.js", "MongoDB", "Stripe"],
-      image: "/placeholder.svg?height=200&width=300",
-      github: "#",
-      live: "#",
+        "Full-stack e-commerce solution with React, Node.js, and MongoDB. Features include user authentication,ai chatbot and admin panel.",
+      tech: ["React", "Node.js", "MongoDB", "Firebase Authentication","Tailwind CSS"],
+      image: "/communets.png?height=200&width=300",
+      github: "https://github.com/tomsabu444/Communets-E-commerce",
+      live: "https://communets.com/",
     },
     {
-      title: "Task Management App",
+      title: "Personal Portfolio Website",
       description:
-        "Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      tech: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
-      image: "/placeholder.svg?height=200&width=300",
-      github: "#",
-      live: "#",
+        "A modern, interactive portfolio website showcasing professional achievements and expertise, built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.",
+      tech: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS"],
+      image: "/portfolio.png?height=200&width=300",
+      github: "https://github.com/suraijmuhammed/portfolio",
+      live: "https://suraijpc.live/",
     },
     {
       title: "Weather Dashboard",
@@ -141,7 +141,7 @@ export default function Portfolio() {
       period: "2021 - 2025",
       description:
         " Minor in Robotics and Automation Engineering",
-      gpa: "3.8/4.0",
+      gpa: "8.9/10",
     },
     {
       degree: "Higher Secondary",
@@ -149,7 +149,7 @@ export default function Portfolio() {
       location: "Taliparamba, Kannur",
       period: "2019 - 2021",
       description: "Science",
-      gpa: "3.6/4.0",
+      gpa: "9.8/10",
     },
   ]
 
