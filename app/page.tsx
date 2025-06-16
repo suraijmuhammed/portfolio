@@ -304,16 +304,18 @@ export default function Portfolio() {
   }
 
   const TimelineItem = ({ item, index, isExperience = true }: { item: any; index: number; isExperience?: boolean }) => {
-    const ref = useRef(null)
-    const isInView = useInView(ref, { once: true, margin: "-100px" })
+    const desktopRef = useRef(null)
+    const mobileRef = useRef(null)
+    const isDesktopInView = useInView(desktopRef, { once: true, margin: "-50px" })
+    const isMobileInView = useInView(mobileRef, { once: true, margin: "-50px" })
 
     return (
       <>
         {/* Desktop Timeline Layout */}
         <motion.div
-          ref={ref}
+          ref={desktopRef}
           initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+          animate={isDesktopInView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
           transition={{ duration: 0.6, delay: index * 0.1 }}
           className={`hidden md:flex items-center mb-8 ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
         >
@@ -351,8 +353,9 @@ export default function Portfolio() {
 
         {/* Mobile Single Column Layout - Everything on Right */}
         <motion.div
+          ref={mobileRef}
           initial={{ opacity: 0, x: 50 }}
-          animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+          animate={isMobileInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
           transition={{ duration: 0.6, delay: index * 0.1 }}
           className="md:hidden mb-6"
         >
