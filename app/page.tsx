@@ -23,12 +23,15 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import Image from "next/image"
 import { useRef, useState } from "react"
+import emailjs from "@emailjs/browser"
 
 export default function Portfolio() {
   const { scrollYProgress } = useScroll()
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const formRef = useRef<HTMLFormElement>(null)
+  const [formStatus, setFormStatus] = useState<string | null>(null)
 
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
@@ -83,7 +86,8 @@ export default function Portfolio() {
       image: "/dex33.webp?height=200&width=300",
       github: "https://github.com/orgs/DeEx3-DAO/repositories",
       live: "https://devfolio.co/projects/deex-dao-2de9",
-    },{
+    },
+    {
       title: "FaceTrack",
       description:
         "FaceTrack is a comprehensive facial recognition platform that uses advanced machine learning to detect, identify, and label faces in uploaded images. Authenticated users can analyze images through computer vision algorithms and access detailed profiles of identified individuals with secure access controls.",
@@ -170,7 +174,34 @@ export default function Portfolio() {
     },
   ]
 
-  // Enhanced floating particles with more bubbles and variety
+  // Initialize EmailJS
+  emailjs.init("VD5FKmnZUt6u7ZCBv") 
+
+  // Handle form submission
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (formRef.current) {
+      setFormStatus("Sending...")
+      emailjs
+        .sendForm(
+          "service_gw2giwg",
+          "template_wbe449x", 
+          formRef.current
+        )
+        .then(
+          () => {
+            setFormStatus("Message sent successfully!")
+            formRef.current?.reset()
+            setTimeout(() => setFormStatus(null), 3000)
+          },
+          (error) => {
+            setFormStatus("Failed to send message. Please try again.")
+            console.error("EmailJS error:", error)
+          }
+        )
+    }
+  }
+
   const FloatingParticles = () => {
     return (
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
@@ -699,43 +730,56 @@ export default function Portfolio() {
           >
             <Card className="bg-gray-800/50 border-gray-700">
               <CardContent className="p-8">
-                <form className="space-y-6">
+                <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-medium mb-2">Name</label>
                       <Input
+                        name="name"
                         className="bg-gray-700 border-gray-600 focus:border-gray-400 text-white"
                         placeholder="Your name"
+                        required
                       />
                     </div>
                     <div>
                       <label className="block text-sm font-medium mb-2">Email</label>
                       <Input
+                        name="email"
                         type="email"
                         className="bg-gray-700 border-gray-600 focus:border-gray-400 text-white"
                         placeholder="your.email@example.com"
+                        required
                       />
                     </div>
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-2">Subject</label>
                     <Input
+                      name="subject"
                       className="bg-gray-700 border-gray-600 focus:border-gray-400 text-white"
                       placeholder="Project collaboration"
+                      required
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-medium mb-2">Message</label>
                     <Textarea
+                      name="message"
                       className="bg-gray-700 border-gray-600 focus:border-gray-400 text-white min-h-[120px]"
                       placeholder="Tell me about your project..."
+                      required
                     />
                   </div>
                   <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                    <Button className="w-full bg-white text-black hover:bg-gray-200 font-semibold py-3">
+                    <Button type="submit" className="w-full bg-white text-black hover:bg-gray-200 font-semibold py-3">
                       Send Message
                     </Button>
                   </motion.div>
+                  {formStatus && (
+                    <p className={`text-sm text-center ${formStatus.includes("success") ? "text-green-400" : "text-red-400"}`}>
+                      {formStatus}
+                    </p>
+                  )}
                 </form>
               </CardContent>
             </Card>
