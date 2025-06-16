@@ -76,13 +76,30 @@ export default function Portfolio() {
       live: "https://suraijpc.live/",
     },
     {
-      title: "Weather Dashboard",
+      title: "DeEx3 DAO",
       description:
-        "Modern weather application with location-based forecasts, interactive maps, and detailed weather analytics.",
-      tech: ["Vue.js", "Express", "OpenWeather API", "Chart.js"],
-      image: "/placeholder.svg?height=200&width=300",
-      github: "#",
-      live: "#",
+        "A decentralized platform that facilitates scientists and researchers in publishing their papers, securing grants and funding from investors, and offers a dedicated space for peer-reviewed research.Associated with ETH India 2023",
+      tech: ["Solidity", "Tailwind CSS", "React.js"],
+      image: "/dex33.webp?height=200&width=300",
+      github: "https://github.com/orgs/DeEx3-DAO/repositories",
+      live: "https://devfolio.co/projects/deex-dao-2de9",
+    },{
+      title: "FaceTrack",
+      description:
+        "FaceTrack is a comprehensive facial recognition platform that uses advanced machine learning to detect, identify, and label faces in uploaded images. Authenticated users can analyze images through computer vision algorithms and access detailed profiles of identified individuals with secure access controls.",
+      tech: ["React.js", "Firebase Authentication"],
+      image: "/facetrackk.jpg?height=200&width=300",
+      github: "https://github.com/suraijmuhammed/facetrack",
+      live: "https://drive.google.com/drive/folders/19oqmMp7KYBobpj38neO_pp63V4KXKQEO?usp=drive_link",
+    },
+    {
+      title: "FaceFinder",
+      description:
+        "FaceFinder is a real-time facial recognition system for law enforcement, featuring super-resolution, sketch generation, and age progression. I contributed to website development, designing and implementing user and admin flows with Firebase authentication to ensure seamless user interaction and secure access control",
+      tech: ["React.js", "Firebase Authentication","UI/UX"],
+      image: "/facefinderr.jpg?height=200&width=300",
+      github: "https://github.com/suraijmuhammed/FaceFinder",
+      live: "https://drive.google.com/file/d/1VOsAiYW7m6KuVXD28NJFMLhvhN9mPLh_/view?usp=sharing",
     },
   ]
 
@@ -476,7 +493,7 @@ export default function Portfolio() {
             {[
               { icon: Github, href: "https://github.com/suraijmuhammed" },
               { icon: Linkedin, href: "https://www.linkedin.com/in/muhammed-suraij-pc/" },
-              { icon: Mail, href: "mailto:muhammedsuraij387@gmail.com" },
+              // { icon: Mail, href: "https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSBnNfKsHpZxPfvXHRfhBfvWDclDZvbXwJFwhbxtsZNksGxXJdBBmCkWvPnrqclfVbzDSvrN" },
             ].map((social, index) => (
               <motion.a
                 key={index}
@@ -495,8 +512,8 @@ export default function Portfolio() {
               onClick={() => {
                 // Create a dummy PDF download
                 const link = document.createElement("a")
-                link.href = "/placeholder.svg?height=800&width=600" // Replace with actual resume PDF
-                link.download = "John_Doe_Resume.pdf"
+                link.href = "/muhammed_original (1).pdf?height=800&width=600" 
+                link.download = "Muhammed_Suraij_pc.pdf"
                 link.click()
               }}
               className="bg-white text-black hover:bg-gray-200 font-semibold px-8 py-3 rounded-full transition-all"
