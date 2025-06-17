@@ -61,15 +61,6 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: "Communets E-Commerce Website",
-      description:
-        "Full-stack e-commerce solution with React, Node.js, and MongoDB. Features include user authentication,ai chatbot and admin panel.",
-      tech: ["React", "Node.js", "MongoDB", "Firebase Authentication","Tailwind CSS"],
-      image: "/communets.png?height=200&width=300",
-      github: "https://github.com/tomsabu444/Communets-E-commerce",
-      live: "https://communets.com/",
-    },
-    {
       title: "Personal Portfolio Website",
       description:
         "A modern, interactive portfolio website showcasing professional achievements and expertise, built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.",
@@ -78,6 +69,16 @@ export default function Portfolio() {
       github: "https://github.com/suraijmuhammed/portfolio",
       live: "https://suraijpc.live/",
     },
+    {
+      title: "Communets E-Commerce Website",
+      description:
+        "Full-stack e-commerce solution with React, Node.js, and MongoDB. Features include user authentication,ai chatbot and admin panel.",
+      tech: ["React", "Node.js", "MongoDB", "Firebase Authentication","Tailwind CSS"],
+      image: "/communets.png?height=200&width=300",
+      github: "https://github.com/tomsabu444/Communets-E-commerce",
+      live: "https://communets.com/",
+    },
+    
     {
       title: "DeEx3 DAO",
       description:
