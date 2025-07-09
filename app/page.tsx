@@ -547,7 +547,7 @@ export default function Portfolio() {
               onClick={() => {
                 // Create a dummy PDF download
                 const link = document.createElement("a")
-                link.href = "/muhammed_original (1).pdf?height=800&width=600" 
+                link.href = "/MUHAMMED_SURAIJ_PC.pdf?height=800&width=600" 
                 link.download = "Muhammed_Suraij_pc.pdf"
                 link.click()
               }}
