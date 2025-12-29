@@ -124,12 +124,17 @@ export default function Portfolio() {
   { name: "Programming Languages", icon: Code, description: "C, JavaScript, Python,Java" },
 ]
 
-  const experiences = [
+  const experiences = [{
+     title: "Software Developer",
+      company: "Hassan Bin Al Shaikh Group of Industries",
+      location: "Dubai, United Arab Emirates",
+      period: "2025 Nov - Present"
+  },
     {
       title: "Software Developer",
       company: "iNPLASS InfoTech",
       location: "Dubai, United Arab Emirates(Remote)",
-      period: "2024 Jan - Present",
+      period: "2024 Jan - Aug 2025",
 //       description:[
 //         " Developed features for GUEST by iNPLASS, STAFF by iNPLASS, and HOP by iNPLASS, enhancing the guest communication, staff collaboration, and hotel management functionalities, respectively",
 // "Fixed bugs and improved existing features using React.js, Node.js, Firebase, and other technologies to ensure a smooth user experience across the multi-lingual guest communication and hotel operations management platform",
@@ -144,7 +149,7 @@ export default function Portfolio() {
       title: "Software Developer and Project Manager",
       company: "HULT InfoTech",
       location: "Kottayam,Kerala (Self Employed)",
-      period: "2024 Dec - Present",
+      period: "2024 Dec - Nov 2025",
       // description:
       //   "Developed and maintained multiple client projects using modern web technologies. Collaborated with design teams to create user-friendly interfaces.",
       // achievements: ["Delivered 15+ successful projects", "Reduced load times by 60%", "Integrated third-party APIs"],
