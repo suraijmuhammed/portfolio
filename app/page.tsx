@@ -78,6 +78,15 @@ export default function Portfolio() {
       github: "https://github.com/tomsabu444/Communets-E-commerce",
       live: "https://communets.com/",
     },
+    {
+      title: "PALA MARATHON 2025 Official Website",
+      description:
+        "Pala Marathon event platform featuring registration system and real-time tracking developed with React and CSS",
+      tech: ["React", "MongoDB", "Firebase Authentication","Tailwind CSS"],
+      image: "/pala.png?height=200&width=300",
+      github: "https://github.com/tomsabu444/Pala-Marathon-Website",
+      live: "https://palamarathon.efpala.org/",
+    },
     
     {
       title: "DeEx3 DAO",
